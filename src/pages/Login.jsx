@@ -72,7 +72,7 @@ export default function Login() {
             <div className="w-12 h-12 bg-brand-primary rounded-2xl flex items-center justify-center shadow-lg shadow-orange-500/20">
               <BookOpen className="text-white w-7 h-7" />
             </div>
-            <span className="text-3xl font-display font-bold tracking-tighter">Learn<span className="text-brand-primary">ify</span></span>
+            <span className="text-3xl font-display font-bold tracking-tighter">LEARNY<span className="text-brand-primary">FY</span></span>
           </div>
           <h1 className="text-4xl font-bold mb-2">Welcome Back</h1>
           <p className="text-white/40">Continue your elite learning journey today.</p>
