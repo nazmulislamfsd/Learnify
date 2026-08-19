@@ -1,0 +1,40 @@
+{
+  "name": "react-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.js",
+    "build": "vite build",
+    "start": "node server.js",
+    "preview": "vite preview",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@google/genai": "^1.29.0",
+    "@stripe/react-stripe-js": "^6.2.0",
+    "@stripe/stripe-js": "^9.3.0",
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
+    "express": "^4.22.1",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.38.0",
+    "multer": "^2.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.14.2",
+    "stripe": "^22.0.2",
+    "tailwind-merge": "^3.5.0",
+    "tsx": "^4.21.0",
+    "uuid": "^14.0.0",
+    "uuidv4": "^6.2.13",
+    "vite": "^6.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "tailwindcss": "^4.1.14",
+    "vite": "^6.2.0"
+  }
+}

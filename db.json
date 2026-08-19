@@ -1,0 +1,107 @@
+{
+  "courses": [
+    {
+      "id": "crs-1786815836007",
+      "title": "Programming For C",
+      "instructor": "Anisul Islam",
+      "price": 20,
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop",
+      "level": "Beginner",
+      "category": "Development",
+      "description": "",
+      "lessons": 12,
+      "hours": "6.0",
+      "videoUrl": "/uploads/Motivational_status___12th_Fail-720p-1786815951784-631553.mp4",
+      "curriculum": [
+        {
+          "title": "Intro & Getting Started",
+          "videoUrl": "/uploads/Motivational_status___12th_Fail-720p-1786816301491-929342.mp4"
+        },
+        {
+          "title": "Core Implementation",
+          "videoUrl": ""
+        },
+        {
+          "title": "Project Workspace Build",
+          "videoUrl": ""
+        },
+        {
+          "title": "Deploying live",
+          "videoUrl": ""
+        }
+      ]
+    }
+  ],
+  "students": [
+    {
+      "id": "usr-admin",
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "registeredAt": "2026-05-12T14:32:00Z",
+      "enrolledIds": [],
+      "status": "Active",
+      "role": "Admin"
+    }
+  ],
+  "transactions": [],
+  "system_logs": [
+    {
+      "id": "log-1786819052598",
+      "action": "User Logged In",
+      "details": "User \"John Doe\" (john@example.com) authenticated successfully",
+      "user": "john@example.com",
+      "date": "2026-08-15T18:37:32.598Z"
+    },
+    {
+      "id": "log-1786818984525",
+      "action": "User Logged In",
+      "details": "User \"Admin User\" (admin@example.com) authenticated successfully",
+      "user": "admin@example.com",
+      "date": "2026-08-15T18:36:24.525Z"
+    },
+    {
+      "id": "log-1786818238481",
+      "action": "Transaction Initiated",
+      "details": "Student \"John Doe\" initiated checkout payment via bkash for course \"Programming For C\"",
+      "user": "john@example.com",
+      "date": "2026-08-15T18:23:58.481Z"
+    },
+    {
+      "id": "log-1786816301541",
+      "action": "Direct Video Uploaded",
+      "details": "Uploaded video file \"Motivational status _ 12th Fail-720p.mp4\" (3.82 MB)",
+      "user": "Admin",
+      "date": "2026-08-15T17:51:41.541Z"
+    },
+    {
+      "id": "log-1786815951831",
+      "action": "Direct Video Uploaded",
+      "details": "Uploaded video file \"Motivational status _ 12th Fail-720p.mp4\" (3.82 MB)",
+      "user": "Admin",
+      "date": "2026-08-15T17:45:51.831Z"
+    },
+    {
+      "id": "log-1786815689154",
+      "action": "System State Reset",
+      "details": "Synchronized database variables and catalogs back to system defaults.",
+      "user": "System",
+      "date": "2026-08-15T17:41:29.154Z"
+    },
+    {
+      "id": "log-1",
+      "action": "System Setup",
+      "user": "System",
+      "details": "Initialized clean application database",
+      "date": "2026-05-27T01:00:00Z"
+    }
+  ],
+  "app_config": {
+    "maintenanceMode": false,
+    "enableCertificate": true,
+    "enableReviews": true,
+    "bkashSandbox": true,
+    "discountPercent": 15,
+    "minPayoutThreshold": 50
+  }
+}

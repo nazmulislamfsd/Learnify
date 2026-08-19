@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-brand-primary: #2563eb;       /* Royal Blue */
+  --color-brand-secondary: #0f172a;     /* Deep Slate */
+  
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #f8fafc !important; /* Premium clean slate-white background */
+    color: #1e293b !important;            /* Slate-800 for high-contrast, premium body text */
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-slate-900;
+  }
+}
+
+section {
+  @apply scroll-mt-32;
+}
+
+/* Base style mappings to achieve perfect white-blue light mode across all components */
+
+/* Dark backgrounds overridden with clean slate white background */
+.bg-\[\#050505\], 
+.bg-\[\#0a0a0a\], 
+.bg-\[\#0d0d0d\], 
+.bg-\[\#141414\],
+.bg-black,
+.bg-black\/5,
+.bg-black\/20,
+.bg-[#050505],
+.bg-[#0a0a0a],
+.bg-[#0d0d0d],
+.bg-[#1a1a1a] {
+  background-color: #f8fafc !important;
+}
+
+/* Overriding dark background shades inside page content */
+div[class*="bg-[#050505]"],
+div[class*="bg-[#0a0a0a]"],
+div[class*="bg-[#0d0d0d]"],
+div[class*="bg-black"] {
+  background-color: #f8fafc !important;
+}
+
+/* Semi-transparent dark backgrounds become gorgeous soft glass elements */
+.bg-black\/40,
+.bg-black\/50,
+.bg-black\/60,
+.bg-black\/75,
+.bg-black\/80,
+.bg-black\/90,
+.bg-black\/95 {
+  background-color: rgba(248, 250, 252, 0.85) !important;
+}
+
+/* Inputs and interactive elements */
+input, textarea, select {
+  background-color: #ffffff !important;
+  border-color: rgba(37, 99, 235, 0.15) !important;
+  color: #0f172a !important;
+}
+
+select option, optgroup {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 8px 12px !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Placeholder visibility */
+input::placeholder, textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Glass cards and structures mapping to light translucent panels */
+.glass {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-color: rgba(37, 99, 235, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.03) !important;
+}
+
+.glass-dark {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-color: rgba(37, 99, 235, 0.14) !important;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.05) !important;
+}
+
+/* Interactive elements hover mapping */
+.group:hover .glass,
+.glass:hover {
+  border-color: rgba(37, 99, 235, 0.25) !important;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.06) !important;
+}
+
+/* Title & Text Colors */
+.text-white,
+.text-white\/90,
+.text-white\/80,
+.text-slate-100 {
+  color: #0f172a !important; /* Deep Slate-900 text */
+}
+
+/* Secondary Text adjustments */
+.text-white\/60,
+.text-white\/50,
+.text-gray-300,
+.text-slate-300,
+.text-gray-400 {
+  color: #475569 !important; /* Slate-600 */
+}
+
+/* Tertiary & Utility text */
+.text-white\/40,
+.text-white\/30,
+.text-gray-500,
+.text-slate-500 {
+  color: #64748b !important; /* Slate-500 */
+}
+
+.text-white\/20,
+.text-white\/10 {
+  color: #94a3b8 !important; /* Slate-400 */
+}
+
+/* Ensure solid primary items maintain crisp readable white text */
+.bg-brand-primary,
+button.bg-brand-primary,
+a.bg-brand-primary,
+.bg-brand-primary *,
+button.bg-brand-primary *,
+a.bg-brand-primary *,
+.bg-blue-600,
+.bg-blue-600 *,
+.bg-indigo-600,
+.bg-indigo-600 *,
+.bg-emerald-500,
+.bg-emerald-500 *,
+.bg-rose-500,
+.bg-rose-500 *,
+.bg-slate-900 *,
+.active-tab,
+.active-tab * {
+  color: #ffffff !important;
+}
+
+/* Status colors and badges */
+.text-emerald-400,
+.text-emerald-500,
+.text-emerald-600,
+.text-emerald-700 {
+  color: #059669 !important; /* High-contrast emerald green */
+}
+
+.text-red-400,
+.text-red-500,
+.text-red-600,
+.text-red-700 {
+  color: #dc2626 !important; /* High-contrast red */
+}
+
+.text-amber-400,
+.text-amber-500,
+.text-amber-600,
+.text-amber-700 {
+  color: #d97706 !important; /* High-contrast amber */
+}
+
+/* Ensure child icons inside primary solid states are colored white */
+button.bg-brand-primary svg,
+a.bg-brand-primary svg,
+.bg-brand-primary svg {
+  stroke: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Orange and Sunset highlights mapped to Cobalt & Royal Blue elements */
+.text-orange-400,
+.text-brand-primary {
+  color: #2563eb !important;
+}
+
+.text-orange-500 {
+  color: #1d4ed8 !important;
+}
+
+.bg-orange-600,
+.hover\:bg-orange-600:hover,
+.hover\:bg-orange-700:hover {
+  background-color: #1d4ed8 !important;
+}
+
+.border-orange-500\/20 {
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Shadows and decorative lighting elements redefined for clean blue hue */
+.shadow-orange-500\/30,
+.shadow-orange-500\/20 {
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.25) !important;
+}
+
+/* Glowing accent orbs */
+.bg-brand-primary\/5,
+.bg-brand-primary\/10,
+.bg-brand-primary\/20 {
+  background-color: rgba(37, 99, 235, 0.08) !important;
+}
+
+/* Vibrant modern gradient texts */
+.gradient-text {
+  background-image: linear-gradient(to right, #2563eb, #1d4ed8, #0ea5e9) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.bg-gradient-to-tr.from-brand-primary.to-orange-400,
+.bg-gradient-to-r.from-brand-primary.to-orange-400 {
+  background-image: linear-gradient(to right, #2563eb, #0ea5e9) !important;
+}
+
+/* Border overrides */
+.border-white\/5,
+.border-white\/10,
+.border-white\/20,
+.border-slate-800,
+.border-zinc-800,
+.border-gray-800 {
+  border-color: rgba(37, 99, 235, 0.12) !important;
+}
+
+/* Admin panel special lists & table structures */
+tr.border-white\/5,
+tr.border-white\/10 {
+  border-bottom-color: rgba(37, 99, 235, 0.08) !important;
+}
+
+td {
+  color: #1e293b !important;
+}
+
+/* Accordion or interactive collapsible headers */
+.faq-header {
+  color: #0f172a !important;
+}
+
+/* Subtle transitions for elegant UX */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
