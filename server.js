@@ -5,6 +5,7 @@ import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
 import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs';
+import { execSync } from 'child_process';
 import multer from 'multer';
 
 dotenv.config();
@@ -636,9 +637,39 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
+    const indexPath = path.join(distPath, 'index.html');
+    
+    // Auto-generate dist if not built yet (e.g. Render auto-start)
+    if (!fs.existsSync(indexPath)) {
+      try {
+        console.log('Production frontend not found in dist/. Triggering vite build...');
+        execSync('npx vite build', { stdio: 'inherit' });
+      } catch (err) {
+        console.error('Auto vite build failed:', err);
+      }
+    }
+
+    if (fs.existsSync(distPath)) {
+      app.use(express.static(distPath));
+    }
     app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
+      if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+      } else {
+        res.status(503).send(`
+          <!DOCTYPE html>
+          <html>
+            <head><title>Build Required</title></head>
+            <body style="background:#09090b;color:#fff;font-family:system-ui,-apple-system,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;">
+              <div style="text-align:center;max-width:500px;padding:30px;border:1px solid rgba(255,255,255,0.1);border-radius:16px;background:rgba(255,255,255,0.03);">
+                <h2 style="color:#f97316;margin-top:0;">Frontend Build Missing</h2>
+                <p style="color:rgba(255,255,255,0.7);line-height:1.6;">The production frontend was not found in <code>dist/</code>.</p>
+                <p style="color:rgba(255,255,255,0.5);font-size:14px;">Please set your Render <strong>Build Command</strong> to:<br/><code style="background:rgba(255,255,255,0.1);padding:4px 8px;border-radius:4px;color:#fff;">npm install && npm run build</code></p>
+              </div>
+            </body>
+          </html>
+        `);
+      }
     });
   }
 
