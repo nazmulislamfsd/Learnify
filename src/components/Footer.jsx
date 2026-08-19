@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/20 font-medium uppercase tracking-[0.2em]">
-        <span>&copy; 2026 LearniFy. All Rights Reserved.</span>
+        <span>&copy; 2026 Learnyfy. All Rights Reserved.</span>
         <div className="flex gap-8">
           <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
